@@ -1,0 +1,67 @@
+/* app.component.css */
+/* .container {
+    
+    margin-left: -0.02px;
+    margin-left: 30px;
+    display: flex;
+  } */
+  
+ /* app.component.css */
+.container {
+  margin-left: -0.02px;
+    /* margin-left: 30px; */
+  display: flex;
+  height: 100vh;
+  position: relative;
+  top: -28px;
+  left:-33px;
+  
+}
+
+.sidebar {
+  background-color: #343a40; /* Dark background color */
+  padding: 20px;
+  color: white;
+  width: 30em; /* Fixed width */
+}
+
+.sidebar h2 {
+  color: #fff;
+  margin-bottom: 20px;
+  font-size: 2px; /* Larger font size */
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  font-size: 1em;
+}
+
+.sidebar li {
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-size: 15px; /* Medium font size */
+}
+
+.sidebar .sub-item {
+  margin-left: 15px;
+  font-size: 13px; /* Small font size */
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+}
+
+/* Add some transitions for smoother effects */
+.sidebar li,
+.sidebar .sub-item {
+  transition: all 0.3s ease;
+}
+
+.sidebar li:hover,
+
+.sidebar .sub-item:hover {
+  background-color: #555;
+}
+  /* border: 2px solid pink; */

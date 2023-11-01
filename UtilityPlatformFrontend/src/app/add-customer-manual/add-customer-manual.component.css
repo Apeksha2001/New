@@ -1,0 +1,11 @@
+/* Custom CSS for the form and input boxes */
+.custom-form {
+    max-width: 400px; /* Adjust the maximum width as needed */
+    margin: 0 auto; /* Center the form horizontally */
+  }
+  
+  .custom-input {
+    width: 100%; /* Make input boxes full width within the form */
+    max-width: 100%; /* Ensure input boxes don't exceed the form's width */
+  }
+  

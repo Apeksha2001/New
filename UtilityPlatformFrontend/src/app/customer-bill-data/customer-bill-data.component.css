@@ -1,0 +1,31 @@
+.custom-button-size {
+    width: 100px; 
+    height: 40px; 
+  }
+  
+ 
+  .custom-table {
+    margin-left: -20px;
+    border-collapse: collapse;
+    width: 100%; /* Ensure the table takes full width of the container */
+  }
+
+  .custom-table th,
+  .custom-table td {
+    text-align: center; 
+   
+  }
+
+  .custom-table thead th {
+    background-color: #343a40;
+    color: #fff;
+  
+  }
+
+  .custom-table tbody tr:nth-child(odd) {
+    background-color: #f8f9fa;
+  }
+
+  .custom-table tbody tr:hover {
+    background-color: #e2e6ea;
+  }

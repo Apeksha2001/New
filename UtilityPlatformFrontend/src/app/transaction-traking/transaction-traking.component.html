@@ -1,0 +1,43 @@
+<app-header></app-header>
+
+
+<br>
+
+<div class="container-fluid" >
+    <div class="row" >
+        <div class="col-md-2" ><app-sidebar></app-sidebar></div>
+        <div class="col-md-10">
+
+
+
+            <!-- <div class="container mt-5"> -->
+
+            <div class="container mt-6">
+                <table class="table table-bordered table-hover  custom-table">
+
+                    <thead class="thead-dark">
+                        <th>Payment ID</th>
+                        <th>Customer Name</th>
+                        <th>Customer Id</th>
+                        <th>Bill Amount</th>
+                        <th>Bill ID</th>
+                        <th>Paid Date</th>
+                        <th>Payment Type</th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of paymentTrakingData">
+
+                            <td>{{item.paymentId}}</td>
+                            <td>{{item.customerName}}</td>
+                            <td>{{item.customerId}}</td>
+                            <td>{{item.billAmount}}</td>
+                            <td>{{item.billId}}</td>
+                            <td>{{item.paidDate| date:'dd-MM-yyyy'}}</td>
+                            <td>{{item.paymentType}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

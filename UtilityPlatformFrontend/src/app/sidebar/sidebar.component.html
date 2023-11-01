@@ -1,0 +1,23 @@
+<!-- app.component.html -->
+<div class="container">
+  <div class="sidebar">
+    
+    <ul>
+      <li (click)="toggleModule('customer-data')">Customer Details</li>
+      <ul *ngIf="currentModule === 'customer-data'">
+        <li (click)="navigateTo('customer-data')" class="sub-item">View Data</li>
+        <li (click)="navigateTo('/abcd')" class="sub-item">Add Customer</li>
+      </ul>
+      <li (click)="toggleModule('customer-bill-data')">Customer Bill Details</li>
+      <ul *ngIf="currentModule === 'customer-bill-data'">
+        <li (click)="navigateTo('customer-bill-data')" class="sub-item">View Data</li>
+        <li (click)="navigateTo('/add-customer-manual')" class="sub-item">Add Bill </li>
+        <li (click)="navigateTo('/add-customer-csv')" class="sub-item">Upload CSV</li>
+      </ul>
+      <li (click)="navigateTo('/transaction-tracking')">Transaction Tracking</li>
+    </ul>
+  </div>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

@@ -1,0 +1,62 @@
+<p>employee works!</p>
+
+<app-header></app-header>
+<app-sidebar></app-sidebar>
+<div class="container mt-5">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Employee</h5>
+      <form (ngSubmit)="submitForm()" #employeeForm="ngForm" class="custom-form">
+        <div class="form-group">
+          <label for="employeeName">Employee Name</label>
+          <input type="text" class="form-control" id="employeeName" name="employeeName" [(ngModel)]="employeeData.employeeName" 
+          required
+           #employeeName="ngModel">
+        </div>
+        <div  [hidden]="!employeeName.touched || employeeName.valid" class="alert alert-danger">
+          Please enter Employee Name.
+        </div>
+
+        
+
+       
+
+        <div class="form-group">
+          <label for="telephoneNo">Telephone (10 digits)</label>
+          <input type="telephoneNo" class="form-control " id="telephoneNo" name="telephoneNo" [(ngModel)]="employeeData.telephoneNo" 
+          required pattern="[0-9]{10}"
+          #telephoneNo="ngModel">
+        </div>
+        <div [hidden]="!telephoneNo.touched || telephoneNo.valid " class="alert alert-danger">
+          Please enter Telephone.
+
+        </div>
+
+        <div class="form-group">
+            <label for="emailId">Email (Valid Email Address)</label>
+            <input type="emailId" class="form-control " id="emailId" name="emailId" [(ngModel)]="employeeData.emailId" 
+            required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}"
+            #emailId="ngModel">
+          </div>
+          <div [hidden]="!emailId.touched || emailId.valid " class="alert alert-danger">
+            Please enter a valid Email address
+  
+          </div>
+
+          <div class="form-group">
+            <label for="address">Address</label>
+            <input type="text" class="form-control" id="address" name="address" [(ngModel)]="employeeData.address" 
+            required
+             #address="ngModel">
+          </div>
+          <div  [hidden]="!address.touched || address.valid" class="alert alert-danger">
+            Please enter address.
+          </div>
+
+      
+
+        <button type="submit" class="btn btn-primary" #submitButton [disabled]="!employeeForm.valid">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>

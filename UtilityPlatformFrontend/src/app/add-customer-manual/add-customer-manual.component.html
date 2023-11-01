@@ -1,0 +1,109 @@
+<!-- {
+ 
+	
+	"customerId":1,
+    "unitConsumed":180.90,
+	"billStartDate": "2023-10-01T00:00:00Z",
+    "billDueDate": "2023-10-15T00:00:00Z",
+	
+	"billStatus":"pending"
+} -->
+<app-header></app-header>
+&nbsp;
+&nbsp;
+<!-- <app-sidebar></app-sidebar> -->
+<div class="container-fluid" >
+  <div class="row" >
+      <div class="col-md-2" ><app-sidebar></app-sidebar></div>
+      <div class="col-md-10">
+
+<div class="container mt-5">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Customer Bill Data</h5>
+      <form (ngSubmit)="submitForm()" #customerForm="ngForm" class="custom-form">
+        <!-- <div class="form-group">
+          <label for="customerName">Customer Name</label>
+          <input type="text" class="form-control" id="customerName" name="customerName" [(ngModel)]="customerData.customerName" 
+          required
+           #customerName="ngModel">
+        </div>
+        <div  [hidden]="!customerName.touched || customerName.valid" class="alert alert-danger">
+          Please enter Customer Name.
+        </div> -->
+
+        <div class="form-group">
+          <label for="customerId">Customer ID </label>
+          <input type="text" class="form-control " id="customerId" name="customerId" [(ngModel)]="customerData.customerId" 
+          required 
+    
+          #customerId="ngModel">
+        </div>
+        <div  [hidden]="!customerId.touched || customerId.valid" class="alert alert-danger">
+          Enter customer id
+        </div>
+
+        <div class="form-group">
+          <label for="unitConsumed">Unit Consumed (Positive Number)</label>
+          <input type="number" class="form-control" id="unitConsumed" name="unitConsumed" [(ngModel)]="customerData.unitConsumed" 
+          required 
+          [min]="0"
+          #unitConsumed="ngModel">
+        </div>
+        <div  [hidden]="!unitConsumed.touched || unitConsumed.valid " class="alert alert-danger">
+          Unit Consumed must be a positive number
+        </div>
+
+        <div class="form-group">
+          <label for="billStartDate">Bill Start Date</label>
+          <input type="date" class="form-control custom-input" id="billStartDate" name="billStartDate" [(ngModel)]="customerData.billStartDate" required>
+          <div *ngIf="customerForm.submitted && customerForm.controls.billStartDate.errors?.required" class="text-danger">Please enter Bill Start Date.</div>
+        </div>
+
+        <div class="form-group">
+          <label for="billDueDate">Bill Due Date (After Bill Start Date)</label>
+          <input type="date" class="form-control custom-input" id="billDueDate" name="billDueDate" [(ngModel)]="customerData.billDueDate" required [min]="customerData.billStartDate">
+          <div *ngIf="customerForm.submitted && customerForm.controls.billDueDate.errors?.required" class="text-danger">Please enter Bill Due Date.</div>
+          <!-- <div *ngIf="customerForm.submitted && customerData.billDueDate >customerData.billStartDate" class="text-danger">Due Date must be after Bill Start Date.</div>  -->
+        </div>
+
+        <!-- <div class="form-group">
+          <label for="email">Email (Valid Email Address)</label>
+          <input type="email" class="form-control " id="email" name="email" [(ngModel)]="customerData.email" 
+          required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}"
+          #email="ngModel">
+        </div>
+        <div [hidden]="!email.touched || email.valid " class="alert alert-danger">
+          Please enter a valid Email address
+
+        </div> -->
+
+        <!-- <div class="form-group">
+          <label for="telephone">Telephone (10 digits)</label>
+          <input type="tel" class="form-control " id="telephone" name="telephone" [(ngModel)]="customerData.telephone" 
+          required pattern="[0-9]{10}"
+          #telephone="ngModel">
+        </div>
+        <div [hidden]="!telephone.touched || telephone.valid " class="alert alert-danger">
+          Please enter Telephone.
+
+        </div> -->
+
+        <div class="form-group">
+          <label for="billStatus">Bill Status</label>
+          <select class="form-control custom-input" id="billStatus" name="billStatus" [(ngModel)]="customerData.billStatus" required>
+            <option value="">Select Bill Status</option>
+            <option value="Pending">Pending</option>
+            <option value="Paid">Paid</option>
+          </select>
+          <div *ngIf="customerForm.submitted && customerForm.controls.billStatus.errors?.required" class="text-danger">Please select Bill Status.</div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" #submitButton [disabled]="!customerForm.valid">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
